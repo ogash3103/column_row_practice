@@ -20,7 +20,8 @@ void main() {
         body: Row(
           children: [
             rowContainer,
-            rowContainer
+            rowContainer,
+            rowContainer,
           ],
         ),
       ),
