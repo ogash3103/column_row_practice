@@ -5,7 +5,7 @@ final rowContainer = Expanded(
   flex: 1,
   child: Container(
     margin: margin,
-    width: 300,
+    width: 380,
     decoration: BoxDecoration(
       color: Colors.blueAccent,
       borderRadius: BorderRadius.circular(30),
@@ -17,12 +17,17 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: Row(
-          children: [
-            rowContainer,
-            rowContainer,
-            rowContainer,
-          ],
+        body: Center(
+          child: Column(
+            children: [
+              rowContainer,
+              rowContainer,
+              rowContainer,
+              rowContainer,
+              rowContainer,
+              rowContainer,
+            ],
+          ),
         ),
       ),
     ),
