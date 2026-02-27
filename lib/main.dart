@@ -5,7 +5,6 @@ final rowContainer = Expanded(
   flex: 1,
   child: Container(
     margin: margin,
-    width: 380,
     decoration: BoxDecoration(
       color: Colors.blueAccent,
       borderRadius: BorderRadius.circular(30),
