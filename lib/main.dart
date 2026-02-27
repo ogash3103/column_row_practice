@@ -1,33 +1,56 @@
 import 'package:flutter/material.dart';
 
-const margin = EdgeInsets.all(10);
-final rowContainer = Expanded(
-  flex: 1,
-  child: Container(
-    margin: margin,
-    decoration: BoxDecoration(
-      color: Colors.blueAccent,
-      borderRadius: BorderRadius.circular(30),
-    ),
-  ),
-);
+const gapWidth = SizedBox(width: 12);
 
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Column(
-            children: [
-              rowContainer,
-              rowContainer,
-              rowContainer,
-              rowContainer,
-              rowContainer,
-              rowContainer,
-            ],
+        body: Container(
+          margin: EdgeInsets.all(10),
+          child: GridView.count(
+            crossAxisCount: 4,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            children: List.generate(
+              32,
+                  (index) => Container(
+                decoration: BoxDecoration(
+                  color: Colors.lightBlue,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ),
           ),
-        ),
+        ) 
+      ),
+    ),
+  );
+}
+
+Widget row() {
+  return Row(
+    children: [
+      Expanded(child: box()),
+      gapWidth,
+      Expanded(child: box()),
+      gapWidth,
+      Expanded(child: box()),
+      gapWidth,
+      Expanded(child: box()),
+
+    ],
+  );
+}
+
+Widget box() {
+  return AspectRatio(
+    aspectRatio: 1,
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.blueAccent,
+        borderRadius: BorderRadius.circular(12),
       ),
     ),
   );
