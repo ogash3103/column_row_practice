@@ -6,25 +6,40 @@ void main() {
       home: Scaffold(
         body: Container(
           margin: EdgeInsets.all(10),
-          child: Row(
+          child: Column(
             children: [
-              Expanded(child: Column(
-                children: [
-                  Expanded(flex: 2, child: box()),
-                  Expanded(child: box()),
-                ],
-              )),
-              SizedBox(height: 10,),
-              Expanded(child: Column(
-                children: [
-                  Expanded(child: box()),
-                  Expanded(flex: 2, child: box()),
-                ],
-              )),
-              
+              Expanded(
+                child: Row(
+                  children: [
+                    Expanded(flex: 3, child: box()),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Expanded(flex: 2, child: box()),
+                          Expanded(child: box()),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
 
-              
-              
+              Expanded(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Expanded(flex: 2, child: box()),
+                          Expanded(child: box()),
+                        ],
+                      ),
+                    ),
+                    Expanded(flex: 3, child: box())
+                  ],
+                ),
+              ),
             ],
           ),
         ),
