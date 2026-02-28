@@ -6,17 +6,25 @@ void main() {
       home: Scaffold(
         body: Container(
           margin: EdgeInsets.all(10),
-          child: Column(
+          child: Row(
             children: [
-              Expanded(flex: 4, child: box()),
+              Expanded(child: Column(
+                children: [
+                  Expanded(flex: 2, child: box()),
+                  Expanded(child: box()),
+                ],
+              )),
+              SizedBox(height: 10,),
+              Expanded(child: Column(
+                children: [
+                  Expanded(child: box()),
+                  Expanded(flex: 2, child: box()),
+                ],
+              )),
+              
 
-              SizedBox(height: 7),
-              Expanded(
-                flex: 1,
-                child: Row(
-                  children: List.generate(4, (_) => Expanded(child: box())),
-                ),
-              ),
+              
+              
             ],
           ),
         ),
@@ -25,10 +33,7 @@ void main() {
   );
 }
 
-Widget box({
-  Color color = Colors.lightBlue,
-  double radius = 12,
-}) {
+Widget box({Color color = Colors.lightBlue, double radius = 12}) {
   return Container(
     margin: const EdgeInsets.all(10),
     child: Container(
